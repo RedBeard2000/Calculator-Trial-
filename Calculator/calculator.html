@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&amp;family=Roboto:wght@700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style/calculator.css">
+</head>
+
+<body>
+    <div>
+        <div>
+            <input class="display" type="text" id="display" />
+        </div>
+        <div>
+            <button class="button button__number" onclick="press('7')">7</button>
+            <button class="button button__number" onclick="press('8')">8</button>
+            <button class="button button__number" onclick="press('9')">9</button>
+            <button class="button button__operator" onclick="press('+')">+</button>
+            <button class="button button__backspace" onclick="delete()">Delete</button>
+        </div>
+        <div>
+            <button class="button button__number" onclick="press('4')">4</button>
+            <button class="button button__number" onclick="press('5')">5</button>
+            <button class="button button__number" onclick="press('6')">6</button>
+            <button class="button button__operator" onclick="press('-')">-</button>
+        </div>
+        <div>
+            <button class="button button__number" onclick="press('1')">1</button>
+            <button class="button button__number" onclick="press('2')">2</button>
+            <button class="button button__number" onclick="press('3')">3</button>
+            <button class="button button__operator" onclick="press('*')">*</button>
+        </div>
+        <div>
+            <button class="button button__clear" onclick="reset()">C</button>
+            <button class="button button__number" onclick="press('0')">0</button>
+            <button class="button button__equal" onclick="calc()">=</button>
+            <button class="button button__operator" onclick="press('/')">/</button>
+        </div>
+        <div>
+            <button class="button button__signs" onclick="press('.')">.</button>
+            <button class="button button__signs" onclick="press('(')">(</button>
+            <button class="button button__signs" onclick="press(')')">)</button>
+            <button class="button button__operator" onclick="press('**')">x^y</button>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementById("display")
+
+        function reset() {
+            display.value = "";
+        }
+
+        function press(x) {
+            display.value += x;
+        }
+
+        function calc(params) {
+            display.value = eval(display.value)
+        }
+    </script>
+</body>
+
+</html>
